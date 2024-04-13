@@ -16,13 +16,19 @@
 body{
             background-color: beige;
         }
+       
         .disable{
             text-decoration: line-through ;
             background-color: bisque;
           
         }
-        .blanks{
-            font-size: 24px;
-            margin-right: 5px;
+        .dash {
+            color: black; /* Example style for dashes */
         }
-    
+        
+        .letter {
+            color: red; /* Example style for letters */
+            font-weight: bold;
+            font-size: 30px;
+        }
+        

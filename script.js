@@ -1,5 +1,6 @@
 let letters; 
 let wordLoaded = false; // Variable to track if the word is already loaded
+// edge case , the letters can be repeated 
 
 $(document).ready(function(){
     getWord();
@@ -8,8 +9,9 @@ $(document).ready(function(){
         var value = $(this).val();
         console.log(value);
         fill(letters,value);
-        $(this).prop("disabled", true);
-        $(this).addClass("disable");
+        
+    $(this).prop("disabled", true);
+$(this).addClass("disable");
     });
 });
 
@@ -39,17 +41,26 @@ function dashes(letters){
 
     let dashedword =''
     for (let i =0;i<letters.length;i++){
-        dashedword += "-";
+        dashedword += "<span class='dash'>-</span>";
     }
     document.getElementById("container").innerText = dashedword;
 }
-function fill(letters,value){
-    value = value.toLowerCase()
-    if (letters.includes(value)){
-        console.log("correct");
-        
+function fill(letters, value) {
+    value = value.toLowerCase();
+    let dashedWord = document.getElementById("container").innerText.toLowerCase();
+    let newDashedWord = '';
+
+    for (let i = 0; i < letters.length; i++) {
+        if (letters[i].toLowerCase() === value) {
+            newDashedWord += "<span class='dash'>" + value +"</span>";
+        } else {
+            newDashedWord +="<span class='dash'>-</span>";
+        }
     }
-    else{
-        console.log("wrong");
-    }
+    document.getElementById("container").innerText = newDashedWord;
 }
+
+
+
+// function hang(){
+// }
