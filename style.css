@@ -23,7 +23,10 @@ body{
           
         }
         .dash {
-            color: black; /* Example style for dashes */
+            color: black;
+            font-weight: bold; 
+            margin: 0 5px; 
+            /* Example style for dashes */
         }
         
         .letter {
